@@ -2,7 +2,7 @@
 _build/
 
 # dotfiles
-.*
+.
 !.gitignore
 !.github
 !.mailmap
@@ -48,6 +48,9 @@ package.json
 /share/
 /src/
 venv/
+.env
+odoo.conf
+nginx.conf
 
 # custom_addons
 custom_odoo_addons/

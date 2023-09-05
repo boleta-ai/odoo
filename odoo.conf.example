@@ -1,0 +1,11 @@
+[options]
+; This is the password that allows database operations:
+admin_passwd = <>
+db_host = <>
+db_port = <>
+db_user = <>
+db_password = <>
+workers = <>
+limit-request = <>
+addons_path = addons,custom_odoo_addons
+default_productivity_apps = True
