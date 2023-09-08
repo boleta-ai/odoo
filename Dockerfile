@@ -14,10 +14,10 @@ USER odoo
 WORKDIR /home/odoo/odoo
 
 # Copy
-COPY ./requirements.txt /home/odoo/odoo/requirements.txt
-RUN pip install -r /home/odoo/odoo/requirements.txt
+COPY ./custom_requirements.txt /home/odoo/odoo/custom_requirements.txt
+RUN pip install -r /home/odoo/odoo/custom_requirements.txt
 COPY . /home/odoo/odoo/
 
 ENTRYPOINT ["/bin/bash", "-c"]
 CMD ["wait-for-it -h odoo_db -p 5432 --strict --timeout=300 -- \
-      /home/odoo/odoo/odoo-bin --config /home/odoo/odoo/odoo.conf"]
+      /home/odoo/odoo/odoo-bin --config /home/odoo/odoo/odoo.conf -u boleta_ai"]
