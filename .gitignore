@@ -54,3 +54,6 @@ nginx.conf
 
 # custom_addons
 custom_odoo_addons/
+
+# Odoo data dir
+data_dir
