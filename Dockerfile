@@ -10,13 +10,14 @@ RUN apt update && \
     && pip install --upgrade pip
 
 RUN useradd --create-home odoo
-USER odoo
 WORKDIR /home/odoo/odoo
 
 # Copy
 COPY ./custom_requirements.txt /home/odoo/odoo/custom_requirements.txt
 RUN pip install -r /home/odoo/odoo/custom_requirements.txt
 COPY . /home/odoo/odoo/
+RUN chown -R 1000:1000 /home/odoo/odoo/data_dir
+USER odoo
 
 ENTRYPOINT ["/bin/bash", "-c"]
 CMD ["wait-for-it -h odoo_db -p 5432 --strict --timeout=300 -- \

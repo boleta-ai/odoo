@@ -3,6 +3,8 @@ version: "3.1"
 services:
   odoo_app:
     container_name: odoo_app
+    volumes:
+      - ./data_dir:/home/odoo/odoo/data_dir
     build:
       context: .
       dockerfile: Dockerfile
