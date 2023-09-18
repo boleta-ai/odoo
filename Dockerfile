@@ -24,11 +24,13 @@ RUN mkdir -p /tmp/path_zip/original_files
 RUN mkdir -p /tmp/path_xml/original_files
 RUN mkdir -p /tmp/path_txt/original_files
 RUN mkdir -p /tmp/path_xml/summary_files
+RUN mkdir -p /tmp/path_json/original_files
 
 # Clean old data
 RUN rm -rf /tmp/path_zip/original_files/*
 RUN rm -rf /tmp/path_xml/summary_files/*
 RUN rm -rf /tmp/path_txt/original_files/*
+RUN rm -rf /tmp/path_json/original_files/*
 
 # Up application
 ENTRYPOINT ["/bin/bash", "-c"]
